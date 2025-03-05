@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" [(ngModel)]="cv.name" required>
+    </div>
+    <div>
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" [(ngModel)]="cv.email" required>
+    </div>
+    <div>
+      <label for="cvFile">CV (PDF) :</label>
+      <input type="file" id="cvFile" name="cvFile" (change)="onFileChange($event)" accept=".pdf" required>
+    </div>
+    <button type="submit">Soumettre</button>
+  </form>
