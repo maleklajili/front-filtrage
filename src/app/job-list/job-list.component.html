@@ -1,0 +1,21 @@
+<div class="main-container">
+  <div class="job-list">
+    <div *ngFor="let job of jobs" class="job-card" (click)="selectJob(job)">
+      <h3>{{ job.title }}</h3>
+      <p class="company">{{ job.company }}</p>
+      <p class="meta">{{ job.location }} • {{ job.date }}</p>
+
+      <!-- ✅ Bouton Postuler qui redirige vers le formulaire -->
+      <a
+        [routerLink]="['/apply', job.id, job.title]"
+        (click)="$event.stopPropagation()"
+        class="apply-btn"
+      >
+        Postuler
+      </a>
+    </div>
+  </div>
+
+  <!-- Détail à droite -->
+  <app-job-detail [job]="selectedJob" *ngIf="selectedJob"></app-job-detail>
+</div>

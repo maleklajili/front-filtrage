@@ -1,15 +1,36 @@
-<form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="name">Nom :</label>
-      <input type="text" id="name" name="name" [(ngModel)]="cv.name" required>
+<div class="form-header">
+  Ma candidature - <strong>{{ jobTitle }}</strong>
+</div>
+
+<div class="form-container">
+  <!-- Upload CV -->
+  <div class="upload-box" (click)="cvFileInput.click()">
+    <i class="bi bi-cloud-arrow-up-fill upload-icon"></i>
+    <div class="upload-title">Ajouter votre CV</div>
+    <div class="upload-text">
+      Téléchargez votre CV pour permettre aux recruteurs de<br />
+      vous trouver facilement
     </div>
-    <div>
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" [(ngModel)]="cv.email" required>
-    </div>
-    <div>
-      <label for="cvFile">CV (PDF) :</label>
-      <input type="file" id="cvFile" name="cvFile" (change)="onFileChange($event)" accept=".pdf" required>
-    </div>
+    <input type="file" #cvFileInput (change)="onFileChange($event)" accept="application/pdf" hidden />
+  </div>
+
+  <!-- Formulaire -->
+  <form (ngSubmit)="onSubmit()">
+    <label>Nom</label>
+    <input type="text" [(ngModel)]="cv.name" name="name" required />
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="cv.email" name="email" required />
+
+    <label>Téléphone</label>
+    <input type="tel" [(ngModel)]="cv.phone" name="phone" required />
+
+    <label>Années d'expérience</label>
+    <input type="text" [(ngModel)]="cv.experience" name="experience" required />
+
+    <label>Niveau d'éducation</label>
+    <input type="text" [(ngModel)]="cv.education" name="education" required />
+
     <button type="submit">Soumettre</button>
   </form>
+</div>

@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { CvFormComponent } from './cv-form/cv-form.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CvFormComponent], 
+  imports: [NavbarComponent, RouterOutlet],
   template: `
-    <h1>soumission de CV</h1>
-    <app-cv-form></app-cv-form>
-  `
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+  `,
+  styles: []
 })
-export class AppComponent { }
+export class AppComponent {}

@@ -1,0 +1,28 @@
+.detail-container {
+    width: 65%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 0 1px #e5e7eb;
+  }
+  
+  .detail-container h2 {
+    font-size: 20px;
+    color: #4b0082;
+    margin-bottom: 10px;
+  }
+  
+  .detail-container p {
+    font-size: 14px;
+    color: #374151;
+    margin: 6px 0;
+  }
+  
+  .detail-container h3 {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #6d28d9;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+  }
+  
